@@ -14,7 +14,7 @@
     "predev": "tsc -p server",
     "dev": "concurrently \"mongod\" \"tsc -w -p server\" \"nodemon dist/app.js\"",
     "prod": "concurrently \"mongod\" \"tsc -p server && node dist/app.js\"",
-    "postinstall": "tsc -p src && node dist/app.js",
+    "postinstall": "tsc -p src",
     "testbe": "tsc -p server && mocha dist/test --exit",
     "lint": "ng lint",
     "lintbe": "tslint server/**/**.ts{,x}"

@@ -1,6 +1,7 @@
 import * as express from 'express';
 
 import EntityCtrl from './controllers/entity';
+import MartketCtrl from './controllers/market';
 
 export default function setRoutes(app) {
     const router = express.Router();
@@ -16,6 +17,7 @@ export default function setRoutes(app) {
 
     // Entities
     handleHTTPMethods(['entity', 'entities'], new EntityCtrl());
+    handleHTTPMethods(['market', 'markets'], new MartketCtrl());
 
     // Apply the routes to our application with the prefix /api
     app.use('/api', (req, res, next) => {
